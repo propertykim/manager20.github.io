@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동아리 가입 신청</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="동아리 로고">
+        </div>
+        <div id="initial-step" class="step active">
+            <h1>신청할 동아리 이름을 정확하게 기입해주세요</h1>
+            <input type="text" id="club-name" placeholder="동아리 이름">
+            <button onclick="checkClubName()">다음</button>
+        </div>
+
+        <div id="form-step" class="step">
+            <h1>지원해주셔서 감사합니다. 밑에 양식에 맞추어서 가입신청서를 작성해주세요.</h1>
+            <form id="application-form" onsubmit="submitForm(event)">
+                <label for="name">이름:</label>
+                <input type="text" id="name" required><br>
+                
+                <label for="gender-age">성별/나이:</label>
+                <input type="text" id="gender-age" required><br>
+                
+                <label for="school">학교(전공):</label>
+                <input type="text" id="school" required><br>
+                
+                <label for="residence">거주지(가장 가까운 역 (ex) 홍대입구역 2호선):</label>
+                <input type="text" id="residence" required><br>
+                
+                <label for="phone-model">사용하실 핸드폰 기종(카메라 가능):</label>
+                <input type="text" id="phone-model" required><br>
+                
+                <label for="introduction">자기소개(MBTI 포함 간단한 소개):</label>
+                <input type="text" id="introduction" required><br>
+                
+                <label for="contact">연락처:</label>
+                <input type="text" id="contact" required><br>
+                
+                <button type="submit">제출</button>
+            </form>
+        </div>
+
+        <div id="thanks-step" class="step">
+            <h1>감사합니다. 지원 확인 되셨습니다. 운영진이 검토 후 2일 내에 전화를 드릴 예정입니다. 혹시 시간 불가능한 시간대 있으시면 기입해주세요.</h1>
+            <input type="text" id="unavailable-time" placeholder="불가능한 시간대">
+            <button onclick="submitUnavailableTime()">다음</button>
+        </div>
+
+        <div id="confirmation-step" class="step">
+            <h1>확인되었습니다. 기입해주신 시간대 이외로 2일 내에 전화를 드리겠습니다.</h1>
+            <h2>완료되었으면 제출을 눌러주세요.</h2>
+            <button onclick="finishSubmission()">제출</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
